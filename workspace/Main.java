@@ -1,3 +1,8 @@
+// Student: Ulises Cantor
+// Teacher: Mr. Menchukov
+// Date: 1/13/2025
+// Makes the code and UI, makes the game function which asks questions about a given country's capital, name, and language spoken
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -28,6 +33,8 @@ public class Main
     gui.showCountry();
   }
 
+  // Precondition: There is country data
+  // Postcondition: Creates an array with all country data with objects in Country class
   /* loadCountries() reads in the data from the countries-data.csv file and fills in the countryArray with data. You need to add the loop that reads in the country data into the array. */
   public void loadCountries() 
   {
@@ -58,6 +65,8 @@ public class Main
 
   /* showCountry() will show the image associated with the current country. It should get the country at index from the countryArray. It should use its get method to get its image file name and use the code below to put the image in the GUI.
   */
+  // Precondition: Country object has an image file
+  // Postcondition: Highlights the country image on the map, unhighlighting the previous one
   public void showCountry() {
     // Get the country at index from countryArray
     
@@ -68,6 +77,8 @@ public class Main
     imageLabel.setIcon(img);
   }
   
+  // Precondition: There is a completed list of countries with all data properly filled in
+  // Postcondition: Asks the user a random question about the selected country
   /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
   public void nextButtonClick()
   {
@@ -92,6 +103,9 @@ public class Main
   }
   
   /* reviewButton should get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out ); */
+  
+  // Precondition: All data for the current country is filled in properly
+  // Postcondition: Displays all data related to the current highlighted country, it's name, capital, and language
   public void reviewButtonClick()
   {
     String savedresult = countryArray[index].toString();
@@ -101,6 +115,8 @@ public class Main
 
   /* quizButton should clear the outputLabel (outputLabel.setText to empty string), get the country at index from countryArray, print out a question about it like What country is this? and/or What's this country's capital?. Get the user's answer using scan.nextLine() and check if it is equal to the country's data using its get methods and print out correct or incorrect.
   */
+  // Precondition: User inputs text into the field before clicking the quiz button
+  // Postcondition: Displays if the user got the answer correct or not
   public void quizButtonClick()
   {
 System.out.println(input.getText());
